@@ -1,23 +1,8 @@
 [gd_scene format=3 uid="uid://drlgd1g1a3p73"]
 
-[ext_resource type="Texture2D" uid="uid://b66c2p32pyhiu" path="res://Assets/full heart.png" id="1_avwmv"]
-
-[node name="Health" type="Area2D" unique_id=1540242017]
-
-[node name="FullHeart" type="Sprite2D" parent="." unique_id=1217508063]
-texture_filter = 1
-position = Vector2(32, 32)
-scale = Vector2(4, 4)
-texture = ExtResource("1_avwmv")
-
-[node name="FullHeart2" type="Sprite2D" parent="." unique_id=29761774]
-texture_filter = 1
-position = Vector2(112, 32)
-scale = Vector2(4, 4)
-texture = ExtResource("1_avwmv")
-
-[node name="FullHeart3" type="Sprite2D" parent="." unique_id=688249363]
-texture_filter = 1
-position = Vector2(184, 32)
-scale = Vector2(4, 4)
-texture = ExtResource("1_avwmv")
+[node name="Hearts" type="HBoxContainer" unique_id=1506584132]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

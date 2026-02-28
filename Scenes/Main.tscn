@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bllkarx7c5knp" path="res://Scenes/Finger.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://bj2bgx71kx0ye" path="res://Scenes/Zone.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://djlwl0f2hg2cj" path="res://Scenes/Nose.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://drlgd1g1a3p73" path="res://Scenes/Health.tscn" id="5_pbw6q"]
 
 [node name="Game" type="Node2D" unique_id=834624864]
 script = ExtResource("1_kln2b")
@@ -20,3 +21,6 @@ scale = Vector2(0.19999999, 0.19999999)
 
 [node name="Nose" parent="." unique_id=1370808919 instance=ExtResource("4_rgh2o")]
 position = Vector2(216, 120)
+
+[node name="Health" parent="." unique_id=610520519 instance=ExtResource("5_pbw6q")]
+position = Vector2(912, 16)

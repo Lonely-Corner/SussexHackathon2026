@@ -8,8 +8,8 @@
 script = ExtResource("1_5iecr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=979703498]
-position = Vector2(0, 200)
-scale = Vector2(1, 20)
+position = Vector2(0, 100)
+scale = Vector2(1, 10)
 shape = SubResource("RectangleShape2D_hed5w")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
