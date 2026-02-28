@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bllkarx7c5knp"]
+
+[ext_resource type="Script" uid="uid://ks5assxiyia4" path="res://Scripts/Finger.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://c5ayolb7i0m14" path="res://Assets/finger pointer.png" id="2_7choi"]
+
+[node name="Finger" type="Node2D" unique_id=372642552]
+scale = Vector2(5, 5)
+script = ExtResource("1_kyqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766772231]
+texture_filter = 1
+rotation = 1.5707964
+texture = ExtResource("2_7choi")

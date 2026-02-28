@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://3qfg4mhwpar6"]
+
+[ext_resource type="Script" uid="uid://c0gpina7fds11" path="res://Scripts/Spawn.gd" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://bllkarx7c5knp" path="res://Scenes/Finger.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://bj2bgx71kx0ye" path="res://Scenes/Zone.tscn" id="3_kln2b"]
+
+[node name="Game" type="Node2D" unique_id=834624864]
+script = ExtResource("1_kln2b")
+
+[node name="Background" type="Control" parent="." unique_id=1021303947]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.4462
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=353187912]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.553833
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1656800527]
+position = Vector2(576, 324)
+
+[node name="Finger" parent="." unique_id=1200102935 instance=ExtResource("2_idj7w")]
+position = Vector2(168.00002, 360)
+
+[node name="Zone" parent="." unique_id=1864424825 instance=ExtResource("3_kln2b")]
+position = Vector2(205, 329)
