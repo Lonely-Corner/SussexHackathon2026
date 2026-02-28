@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://c1i70a0k1jdo4"]
+[gd_scene format=3 uid="uid://dni7nmecl647b"]
 
-[ext_resource type="Script" uid="uid://c7cewjbiyf8uv" path="res://Scripts/Plant.gd" id="1_doa07"]
-[ext_resource type="Texture2D" uid="uid://cve1cmj63wilb" path="res://Assets/peony flower.png" id="2_doa07"]
+[ext_resource type="Script" uid="uid://c7cewjbiyf8uv" path="res://Scripts/Plant.gd" id="1_skcyu"]
+[ext_resource type="Texture2D" uid="uid://bdhcjppoudnqs" path="res://Assets/venus trap.png" id="2_skcyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0tge"]
 size = Vector2(64, 128)
 
-[node name="Flower" type="Area2D" unique_id=555073943]
-script = ExtResource("1_doa07")
+[node name="Weed" type="Area2D" unique_id=555073943]
+script = ExtResource("1_skcyu")
+isWeed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169556912]
 texture_filter = 1
 position = Vector2(64, 64)
 scale = Vector2(4, 4)
-texture = ExtResource("2_doa07")
+texture = ExtResource("2_skcyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143168756]
 position = Vector2(64, 64)
