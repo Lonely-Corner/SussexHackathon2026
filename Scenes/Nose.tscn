@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://djlwl0f2hg2cj"]
+
+[ext_resource type="Texture2D" uid="uid://dm7131gibwlrf" path="res://Assets/nose.png" id="1_dlrhe"]
+[ext_resource type="Texture2D" uid="uid://b05lj645iujer" path="res://Assets/nose with bogger 1.png" id="2_r4j35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8p2d"]
+size = Vector2(28, 30)
+
+[node name="Nose" type="Area2D" unique_id=1370808919]
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=419574519]
+texture_filter = 1
+texture = ExtResource("1_dlrhe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1267513899]
+visible = false
+texture_filter = 1
+position = Vector2(0, 4)
+texture = ExtResource("2_r4j35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1867885333]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_j8p2d")

@@ -11,10 +11,10 @@ script = ExtResource("1_doa07")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169556912]
 texture_filter = 1
-position = Vector2(64, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("2_doa07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143168756]
-position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_g0tge")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
