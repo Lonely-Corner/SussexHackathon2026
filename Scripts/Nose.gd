@@ -6,6 +6,8 @@ extends Area2D
 @export var leak = false;
 @export var pickCondition = 0;
 
+@export var unpicked = 0;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sprite2D.set_visible(true);
@@ -22,5 +24,6 @@ func _process(_delta: float) -> void:
 		pickCondition = 0;
 	if finger.nosePicked:
 		leak = false;
+		unpicked = 0;
 		$Sprite2D2.set_visible(false)
 	pass

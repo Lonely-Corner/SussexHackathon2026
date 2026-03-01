@@ -26,6 +26,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	heartsContainer.updateHearts(zone.currentHealth)
 	
+	if zone.currentHealth == 0:
+		get_tree().quit()  
+	
 	for i in plant_instances:
 		i.position -= Vector2(speed, 0)
 	pass

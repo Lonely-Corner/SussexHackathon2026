@@ -21,17 +21,21 @@ func _on_area_exited(area):
 		currentPlant = null
 
 func _process(_delta):
-	if currentPlant and Input.is_action_just_pressed("space"):
+	if currentPlant and !finger.toggled and Input.is_action_just_pressed("space"):
 		var result = currentPlant.score()
 
 		if result == 1:
 			if !finger.toggled:
 				combo += 1
-				score += (1 * finger.multiplier);
-				nose.pickCondition += 1;
+				if nose.unpicked < 3:
+					score += (1 * finger.multiplier);
+					nose.pickCondition += 1;
 		else:
 			currentHealth -= 2
 			combo = 0
+			
+		if result != null:
+			nose.unpicked += 1;
 		
 	$"../ComboCounter".text = "combo: " + str(combo)
 	$"../ScoreCounter".text = "score: " + str(score)
