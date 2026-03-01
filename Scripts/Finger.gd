@@ -1,11 +1,14 @@
 extends Node2D
 
+@export var nose = Node2D;
+
 var toggled = false;
+@export var nosePicked = true;
 
 var nosein = Vector2(232, 200)
 var noseout = Vector2(232, 220)
-var touchflower = Vector2(168, 420)
-var flowerneutral =  Vector2(168, 360)
+var touchflower = Vector2(168, 360)
+var flowerneutral = Vector2(168, 340)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -26,6 +29,11 @@ func _process(_delta: float) -> void:
 		position = noseout;
 		if Input.is_action_pressed("space"):
 			position = nosein;
+			if nose.leak:
+				nosePicked = true;
+			else:
+				nosePicked = false;
 		else:
 			position = noseout;
+
 	pass

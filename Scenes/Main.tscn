@@ -12,15 +12,23 @@ script = ExtResource("1_kln2b")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1656800527]
 position = Vector2(576, 324)
 
-[node name="Finger" parent="." unique_id=1200102935 instance=ExtResource("2_idj7w")]
+[node name="Finger" parent="." unique_id=1200102935 node_paths=PackedStringArray("nose") instance=ExtResource("2_idj7w")]
 position = Vector2(168.00002, 360)
+nose = NodePath("../Nose")
 
-[node name="Zone" parent="Finger" unique_id=1864424825 instance=ExtResource("3_kln2b")]
+[node name="Zone" parent="Finger" unique_id=1864424825 node_paths=PackedStringArray("nose", "finger") instance=ExtResource("3_kln2b")]
 position = Vector2(7.399994, -6.199997)
 scale = Vector2(0.19999999, 0.19999999)
+nose = NodePath("../../Nose")
+finger = NodePath("..")
 
-[node name="Nose" parent="." unique_id=1370808919 instance=ExtResource("4_rgh2o")]
+[node name="Nose" parent="." unique_id=1370808919 node_paths=PackedStringArray("zone", "finger") instance=ExtResource("4_rgh2o")]
 position = Vector2(216, 120)
+zone = NodePath("../Finger/Zone")
+finger = NodePath("../Finger")
 
 [node name="Health" parent="." unique_id=610520519 instance=ExtResource("5_pbw6q")]
-position = Vector2(912, 16)
+offset_left = 912.0
+offset_top = 16.0
+offset_right = 912.0
+offset_bottom = 16.0

@@ -11,6 +11,9 @@ func _ready() -> void:
 	spawnPlant("weed", 2000)
 	spawnPlant("flower", 2200)
 	spawnPlant("flower", 2500)
+	spawnPlant("flower", 3000)
+	spawnPlant("flower", 3500)
+	
 	pass # Replace with function body.
 
 
