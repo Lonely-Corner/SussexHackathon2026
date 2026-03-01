@@ -38,6 +38,6 @@ func _process(_delta):
 			nose.unpicked += 1;
 		
 	$"../ComboCounter".text = "combo: " + str(combo)
-	$"../ScoreCounter".text = "score: " + str(score)
+	$"../ScoreCounter".text = "score: " + str(score)+ " x" + str(finger.multiplier)
 	
 		#print("health = ", currentHealth)
