@@ -18,7 +18,6 @@ func _on_area_exited(area):
 			combo = 0
 			currentHealth -= 1
 			nose.pickCondition = 0;
-			print(combo)
 		currentPlant = null
 
 func _process(_delta):
@@ -26,16 +25,15 @@ func _process(_delta):
 		var result = currentPlant.score()
 
 		if result == 1:
-			combo += 1
-			score += 1;
-			nose.pickCondition += 1;
+			if !finger.toggled:
+				combo += 1
+				score += (1 * finger.multiplier);
+				nose.pickCondition += 1;
 		else:
 			currentHealth -= 2
 			combo = 0
-			
-		if finger.nosePicked:
-			score *= 2;
 		
-		print("health = ", currentHealth)
-		print("combo = ", combo)
-		print("score = ", score)
+	$"../../ComboCounter".text = "combo: " + str(combo)
+	$"../../ScoreCounter".text = "score: " + str(score)
+	
+		#print("health = ", currentHealth)

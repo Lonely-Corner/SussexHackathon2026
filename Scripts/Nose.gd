@@ -16,7 +16,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if pickCondition >= 3:
+	if pickCondition == 3:
 		$Sprite2D2.set_visible(true);
 		leak = true;
 		pickCondition = 0;

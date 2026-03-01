@@ -1,9 +1,10 @@
 extends Node2D
 
 @export var nose = Node2D;
+@export var multiplier = 1;
 
 var toggled = false;
-@export var nosePicked = true;
+@export var nosePicked = false;
 
 var nosein = Vector2(232, 200)
 var noseout = Vector2(232, 220)
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 			position = nosein;
 			if nose.leak:
 				nosePicked = true;
+				multiplier *= 2;
 			else:
 				nosePicked = false;
 		else:
