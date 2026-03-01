@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var zone = Node2D;
-
+@onready var deathMenu = preload("res://Scenes/DeathMenu.tscn")
 @onready var heartsContainer = $CanvasLayer/HeartsContainer
 @export var speed = 5;
 
@@ -67,7 +67,7 @@ func _process(_delta: float) -> void:
 	heartsContainer.updateHearts(zone.currentHealth)
 	
 	if zone.currentHealth <= 0:
-		get_tree().quit()  
+		get_tree().change_scene_to_packed(deathMenu)
 	
 	$Grass1.position -= Vector2(speed, 0)
 	$Grass2.position -= Vector2(speed, 0)

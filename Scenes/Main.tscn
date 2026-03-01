@@ -5,9 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://c4qvasn4e0m1b" path="res://Assets/sky background.png" id="2_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bxqmnrms60xc3" path="res://Assets/grass.png" id="3_50glp"]
 [ext_resource type="PackedScene" uid="uid://bj2bgx71kx0ye" path="res://Scenes/Zone.tscn" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://10k8x3aj30b4" path="res://Assets/plaque.png" id="4_grg3l"]
 [ext_resource type="PackedScene" uid="uid://djlwl0f2hg2cj" path="res://Scenes/Nose.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://b7akyfk27rlk7" path="res://Scenes/HeartsContainer.tscn" id="6_v1gob"]
 [ext_resource type="AudioStream" uid="uid://dvgbf100wgis2" path="res://Assets/HakathonSong.wav" id="7_jw32o"]
+[ext_resource type="Script" uid="uid://c6y2geghoe6fr" path="res://Scripts/Pause.gd" id="9_4kpch"]
+[ext_resource type="Texture2D" uid="uid://c3bhg3hm22a8e" path="res://Assets/red button.png" id="10_grg3l"]
+[ext_resource type="Texture2D" uid="uid://drfskjqx75eiv" path="res://Assets/green button.png" id="11_frkhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kpch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grg3l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frkhe"]
 
 [node name="Game" type="Node2D" unique_id=834624864 node_paths=PackedStringArray("zone")]
 script = ExtResource("1_kln2b")
@@ -36,6 +46,24 @@ offset_top = 336.0
 offset_right = 2328.0
 offset_bottom = 648.0
 texture = ExtResource("3_50glp")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1577173264]
+texture_filter = 1
+offset_left = 394.09
+offset_top = 133.92
+offset_right = 642.08997
+offset_bottom = 253.91998
+texture = ExtResource("4_grg3l")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1599325984]
+texture_filter = 1
+offset_left = 394.06
+offset_top = 8.955
+offset_right = 642.05994
+offset_bottom = 128.95502
+texture = ExtResource("4_grg3l")
 expand_mode = 1
 
 [node name="ComboCounter" type="Label" parent="." unique_id=1080415226]
@@ -85,3 +113,65 @@ alignment = 2
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1443477025]
 stream = ExtResource("7_jw32o")
 autoplay = true
+
+[node name="Pause" type="Control" parent="." unique_id=1302573712]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_4kpch")
+
+[node name="Panel" type="Panel" parent="Pause" unique_id=57097914]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextEdit" type="TextEdit" parent="Pause" unique_id=1854778917]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 152.0
+offset_right = 880.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4kpch")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_grg3l")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_frkhe")
+text = "Resume"
+
+[node name="TextEdit2" type="TextEdit" parent="Pause" unique_id=979560068]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 264.0
+offset_right = 1136.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4kpch")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_grg3l")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_frkhe")
+text = "Quit to Menu"
+
+[node name="Button" type="Button" parent="Pause" unique_id=114292071]
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 264.0
+offset_right = 432.0
+offset_bottom = 288.0
+scale = Vector2(4, 4)
+icon = ExtResource("10_grg3l")
+flat = true
+
+[node name="Button2" type="Button" parent="Pause" unique_id=280405327]
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 160.0
+offset_right = 432.0
+offset_bottom = 184.0
+scale = Vector2(4, 4)
+icon = ExtResource("11_frkhe")
+flat = true
+
+[connection signal="pressed" from="Pause/Button" to="Pause" method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/Button2" to="Pause" method="_on_button_2_pressed"]
