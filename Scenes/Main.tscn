@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://c0gpina7fds11" path="res://Scripts/Spawn.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://bllkarx7c5knp" path="res://Scenes/Finger.tscn" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://c4qvasn4e0m1b" path="res://Assets/sky background.png" id="2_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://bxqmnrms60xc3" path="res://Assets/grass.png" id="3_50glp"]
 [ext_resource type="PackedScene" uid="uid://bj2bgx71kx0ye" path="res://Scenes/Zone.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://djlwl0f2hg2cj" path="res://Scenes/Nose.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://b7akyfk27rlk7" path="res://Scenes/HeartsContainer.tscn" id="6_v1gob"]
+[ext_resource type="AudioStream" uid="uid://dvgbf100wgis2" path="res://Assets/HakathonSong.wav" id="7_jw32o"]
 
 [node name="Game" type="Node2D" unique_id=834624864 node_paths=PackedStringArray("zone")]
 script = ExtResource("1_kln2b")
@@ -16,6 +18,24 @@ texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("2_pbw6q")
+expand_mode = 1
+
+[node name="Grass1" type="TextureRect" parent="." unique_id=569953583]
+texture_filter = 1
+offset_left = -16.0
+offset_top = 336.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_50glp")
+expand_mode = 1
+
+[node name="Grass2" type="TextureRect" parent="." unique_id=1692605385]
+texture_filter = 1
+offset_left = 1152.0
+offset_top = 336.0
+offset_right = 2328.0
+offset_bottom = 648.0
+texture = ExtResource("3_50glp")
 expand_mode = 1
 
 [node name="ComboCounter" type="Label" parent="." unique_id=1080415226]
@@ -61,3 +81,7 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 alignment = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1443477025]
+stream = ExtResource("7_jw32o")
+autoplay = true

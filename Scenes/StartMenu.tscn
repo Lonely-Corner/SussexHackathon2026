@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dsyhsfojydvwb"]
+
+[ext_resource type="Texture2D" uid="uid://bbl7qanymh34i" path="res://Assets/title screen.png" id="1_dl0pg"]
+[ext_resource type="Script" uid="uid://b533m2m4024lq" path="res://Scripts/StartMenu.gd" id="1_h303d"]
+[ext_resource type="Texture2D" uid="uid://drfskjqx75eiv" path="res://Assets/green button.png" id="2_h303d"]
+[ext_resource type="Texture2D" uid="uid://c3bhg3hm22a8e" path="res://Assets/red button.png" id="3_ujd4t"]
+
+[node name="Control" type="Control" unique_id=1636426626]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h303d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1333047871]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_dl0pg")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=2001068678]
+texture_filter = 1
+layout_mode = 0
+offset_left = 640.0
+offset_top = 232.0
+offset_right = 664.0
+offset_bottom = 256.0
+scale = Vector2(4, 4)
+icon = ExtResource("2_h303d")
+flat = true
+
+[node name="Button2" type="Button" parent="." unique_id=1319882264]
+texture_filter = 1
+layout_mode = 0
+offset_left = 640.0
+offset_top = 400.0
+offset_right = 656.0
+offset_bottom = 416.0
+scale = Vector2(4, 4)
+icon = ExtResource("3_ujd4t")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
