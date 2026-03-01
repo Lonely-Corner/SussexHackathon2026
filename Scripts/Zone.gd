@@ -3,10 +3,10 @@ extends Area2D
 @export var nose = Node2D;
 @export var finger = Node2D;
 
+@export var currentHealth = 6;
 @export var combo = 0
 @export var score = 0;
 var currentPlant = null
-var currentHealth = 6;
 
 func _on_area_entered(area):
 	if area.has_method("score"):
@@ -33,7 +33,7 @@ func _process(_delta):
 			currentHealth -= 2
 			combo = 0
 		
-	$"../../ComboCounter".text = "combo: " + str(combo)
-	$"../../ScoreCounter".text = "score: " + str(score)
+	$"../ComboCounter".text = "combo: " + str(combo)
+	$"../ScoreCounter".text = "score: " + str(score)
 	
 		#print("health = ", currentHealth)

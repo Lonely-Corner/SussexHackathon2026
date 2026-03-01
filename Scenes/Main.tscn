@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://c4qvasn4e0m1b" path="res://Assets/sky background.png" id="2_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://bj2bgx71kx0ye" path="res://Scenes/Zone.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://djlwl0f2hg2cj" path="res://Scenes/Nose.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://b7akyfk27rlk7" path="res://Scenes/HeartsContainer.tscn" id="6_v1gob"]
 
-[node name="Game" type="Node2D" unique_id=834624864]
+[node name="Game" type="Node2D" unique_id=834624864 node_paths=PackedStringArray("zone")]
 script = ExtResource("1_kln2b")
+zone = NodePath("Zone")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1835727830]
 texture_filter = 1
@@ -39,13 +41,23 @@ position = Vector2(576, 324)
 position = Vector2(168.00002, 360)
 nose = NodePath("../Nose")
 
-[node name="Zone" parent="Finger" unique_id=1864424825 node_paths=PackedStringArray("nose", "finger") instance=ExtResource("3_kln2b")]
-position = Vector2(7.399994, -6.199997)
-scale = Vector2(0.19999999, 0.19999999)
-nose = NodePath("../../Nose")
-finger = NodePath("..")
+[node name="Zone" parent="." unique_id=1864424825 node_paths=PackedStringArray("nose", "finger") instance=ExtResource("3_kln2b")]
+position = Vector2(204.99998, 329)
+scale = Vector2(0.99999994, 0.99999994)
+nose = NodePath("../Nose")
+finger = NodePath("../Finger")
 
 [node name="Nose" parent="." unique_id=1370808919 node_paths=PackedStringArray("zone", "finger") instance=ExtResource("4_rgh2o")]
 position = Vector2(216, 120)
-zone = NodePath("../Finger/Zone")
+zone = NodePath("../Zone")
 finger = NodePath("../Finger")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1578584078]
+
+[node name="HeartsContainer" parent="CanvasLayer" unique_id=1392952711 instance=ExtResource("6_v1gob")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+alignment = 2
