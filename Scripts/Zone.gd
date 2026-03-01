@@ -27,9 +27,10 @@ func _process(_delta):
 		if result == 1:
 			if !finger.toggled:
 				combo += 1
+				score += (1 * finger.multiplier);
 				if nose.unpicked < 3:
-					score += (1 * finger.multiplier);
-					nose.pickCondition += 1;
+					score += 1;
+				nose.pickCondition += 1;
 		else:
 			currentHealth -= 2
 			combo = 0
